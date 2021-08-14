@@ -1,0 +1,65 @@
+---
+pipeline:
+  name: dev-account
+  roleArn: arn:aws:iam::667481606687:role/codepipeline
+  artifactStore:
+    type: S3
+    location: codepipeline-us-east-1-667481606687
+    encryptionKey:
+      id: arn:aws:kms:us-east-1:667481606687:key/d3cb5a16-2cd0-43c5-94c9-6b98af73a1eb
+      type: KMS
+  stages:
+  - name: Source
+    actions:
+    - name: Source
+      actionTypeId:
+        category: Source
+        owner: ThirdParty
+        provider: GitHub
+        version: '1'
+      runOrder: 1
+      configuration:
+        Branch: main
+        OAuthToken: "****"
+        Owner: wilshan
+        PollForSourceChanges: 'false'
+        Repo: blue-green
+      outputArtifacts:
+      - name: SourceArtifact
+      inputArtifacts: []
+      region: us-east-1
+      namespace: SourceVariables
+  - name: Deploy
+    actions:
+    - name: Deploy
+      actionTypeId:
+        category: Deploy
+        owner: AWS
+        provider: CodeDeploy
+        version: '1'
+      runOrder: 1
+      configuration:
+        ApplicationName: codedeploy-developer
+        DeploymentGroupName: codedeploy-developer-group
+      outputArtifacts: []
+      inputArtifacts:
+      - name: SourceArtifact
+      region: us-east-1
+      namespace: DeployVariables
+  - name: Staging
+    actions:
+    - inputArtifacts:
+      - name: SourceArtifact
+      name: ExternalDeploy
+      actionTypeId:
+        category: Deploy
+        owner: AWS
+        version: '1'
+        provider: CodeDeploy
+      outputArtifacts: []
+      configuration:
+        ApplicationName: codedeploy-production
+        DeploymentGroupName: codedeploy-group
+      runOrder: 1
+      roleArn: arn:aws:iam::112027425997:role/cross-account-s3-read-only
+  version: 1
