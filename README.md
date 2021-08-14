@@ -363,12 +363,18 @@ In this situation, please follow the below steps:
 
 ```bash
   i. Convert your JSON file in YAML file.
-  ii. Now use the below command to update the CodePipeline. (Using google)
+  ii. Now use the below command to update the CodePipeline. (Using google). I have also added Pipeline.YML file for your reference.
 ```
 ```javascript
 aws codepipeline update-pipeline --cli-input-json file://pipeline.yml
 ```
 
+## Once you finish with all above step, your pipeline should look like below:
+
+
+![image](https://user-images.githubusercontent.com/74950445/129446111-05a247d1-3c8f-44df-ab58-8f4ca4dbe52a.png)
+
+Where, the first two stages is in Developer Account and the 3rd stage is in Production Account.
 
 
 
@@ -377,43 +383,6 @@ aws codepipeline update-pipeline --cli-input-json file://pipeline.yml
 
 
 
+## Reference:
 
-
-
-
-## Demo
-
-Insert gif or link to demo
-
-  
-## Deployment
-
-To deploy this project run
-
-```bash
-  npm run deploy
-```
-
-  
-## Lessons Learned
-
-What did you learn while building this project? What challenges did you face and how did you overcome them?
-
-  
-## Screenshots
-
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
-  
-## Usage/Examples
-
-```javascript
-import Component from 'my-project'
-
-function App() {
-  return <Component />
-}
-```
-
-  
-tcw-cross-account-deployment
+[Documentation](https://docs.aws.amazon.com/codepipeline/latest/userguide/pipelines-create-cross-account.html#pipelines-create-cross-account-setup-accounta)
