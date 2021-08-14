@@ -351,6 +351,24 @@ aws codepipeline get-pipeline --name MyFirstPipeline >pipeline.json
 aws codepipeline update-pipeline --cli-input-json file://pipeline.json
 ```
 
+## Note
+
+For undertanding purpose, i have added my pipeline.json file. Kindly go through it.
+
+## May be you will get the below error, while uploading the JSON file using above command:
+
+![image](https://user-images.githubusercontent.com/74950445/129445936-4f76c323-908c-475a-ba51-0a9beeef5cd6.png)
+
+In this situation, please follow the below steps:
+
+```bash
+  i. Convert your JSON file in YAML file.
+  ii. Now use the below command to update the CodePipeline. (Using google)
+```
+```javascript
+aws codepipeline update-pipeline --cli-input-json file://pipeline.yml
+```
+
 
 
 
