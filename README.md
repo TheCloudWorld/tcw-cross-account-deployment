@@ -385,4 +385,4 @@ Where, the first two stages is in Developer Account and the 3rd stage is in Prod
 
 ## Reference:
 
-[Documentation](https://docs.aws.amazon.com/codepipeline/latest/userguide/pipelines-create-cross-account.html#pipelines-create-cross-account-setup-accounta)
+[AWS Document](https://docs.aws.amazon.com/codepipeline/latest/userguide/pipelines-create-cross-account.html#pipelines-create-cross-account-setup-accounta)
