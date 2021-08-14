@@ -362,8 +362,8 @@ For undertanding purpose, i have added my pipeline.json file. Kindly go through 
 In this situation, please follow the below steps:
 
 ```bash
-  i. Convert your JSON file in YAML file.
-  ii. Now use the below command to update the CodePipeline. (Using google). I have also added Pipeline.YML file for your reference.
+  i. Convert your JSON file in YAML file.  (Using google)
+  ii. Now use the below command to update the CodePipeline. I have also added Pipeline.YML file for your reference.
 ```
 ```javascript
 aws codepipeline update-pipeline --cli-input-json file://pipeline.yml
