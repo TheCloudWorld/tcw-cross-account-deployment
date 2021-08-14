@@ -1,5 +1,4 @@
-# tcw-cross-account-deploymenta
-# Project Title
+# Please follow the below steps to deploy cross-account.
 
 A brief description of what this project does and who it's for
 
