@@ -1,6 +1,11 @@
 # Please follow the below steps to deploy cross-account.
 
-A brief description of what this project does and who it's for
+![image](https://user-images.githubusercontent.com/74950445/129446470-338d0253-5593-4e9b-b782-78b15dd749c3.png)
+
+## High level Architectural Diagram:
+
+![image](https://user-images.githubusercontent.com/74950445/129446489-1d4b77ca-02cf-42f5-813d-3c44be0e493c.png)
+
 
 # Step - 1 (In Developer Account)::
 
